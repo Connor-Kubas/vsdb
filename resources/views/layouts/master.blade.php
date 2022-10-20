@@ -6,7 +6,8 @@
 
         <link rel="icon" href="{{ url('images/favicon.ico') }}">
 
-        <link href="{{ url('css/landing.css')}}" rel="stylesheet">
+        {{-- <link href="{{ url('css/app.css')}}" rel="stylesheet"> --}}
+        <link href="{{ url('css/new.css')}}" rel="stylesheet">
         
     </head>
     

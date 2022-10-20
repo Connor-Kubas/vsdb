@@ -9,8 +9,9 @@ class CardController extends Controller
 {
     public function index()
     {
-        $card = Card::where('name', 'Thanos')->first();
+        $card = Card::where('id', 1)->first();
 
-        return view('home', compact('card'));
+        // return view('home', compact('card'));
+        return view('new', compact('card'));
     }
 }

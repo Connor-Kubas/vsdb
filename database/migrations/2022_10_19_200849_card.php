@@ -16,19 +16,21 @@ return new class extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
             $table->string('name', 30);
-            $table->string('subname', 30);
+            $table->string('subname', 30)->default('');
             $table->string('type', 20);
             $table->integer('rank');
+            $table->string('affiliation', 50)->default('');
             $table->integer('attack');
             $table->integer('defense');
-            $table->boolean('flight');
-            $table->boolean('range');
-            $table->string('power', 500);
-            $table->string('publisher', 10);
-            $table->string('artist', 30);
-            $table->string('card_number');
-            $table->string('flavor_text', 200);
-            $table->string('keywords', 30);
+            $table->boolean('flight')->default('0');
+            $table->boolean('range')->default('0');
+            $table->string('power', 500)->default('');
+            $table->string('publisher', 10)->default('');
+            $table->string('artist', 30)->default('');
+            $table->string('card_number')->default('');
+            $table->string('flavor_text', 200)->default('');
+            $table->string('keywords', 30)->default('');
+            $table->timestamps();
         });
     }
 
