@@ -4,11 +4,11 @@
         <div class="card">
             <div class="header">
                 <div class="header-top">
-                    <h1>{{ $card->name }}</h1>
-                    <h5>{{ $card->publisher }}</h5>
+                    <h1>{{ $card->title }}</h1>
+                    {{-- <h5>{{ $card->publisher }}</h5> --}}
                 </div>
                 <div class="header-bottom">
-                    <h5>{{ $card->subname }}</h5>
+                    <h5>{{ $card->version }}</h5>
                 </div>
             </div>
             <div class="image">
@@ -18,7 +18,7 @@
             </div>
             <div class="sidebar">
                 <div class="rank">
-                    <h1>{{ $card->rank }}</h1>
+                    <h1>{{ $card->cost }}</h1>
                 </div>
                 <div class="affiliation">
                     <h3>{{ $card->affiliation }}</h3>
