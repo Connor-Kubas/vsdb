@@ -2,7 +2,16 @@
 
     @section('content')
 
-        <div class="card" style="background-image: url({{ Storage::url('new_character.png'); }});">
+        <div class="search">
+            <form action="/search" method="post" autocomplete="off">
+                @csrf
+                <input type="text" name="title" class="search-box">
+                <input type="text" name="version" class="search-box">
+                <input type="submit" hidden='true'>
+            </form>
+        </div>
+
+        <div class="card" style="background-image: url({{ Storage::url("$card_image"); }});">
             <div class="title">
                 <h1>{{ $card->title; }}</h1>
             </div>
@@ -12,7 +21,7 @@
             <div class="version">
                 <p>{{ $card->version; }}</p>
             </div>
-            <div class="affiliation" style="{{ $affiliation; }}">
+            <div class="affiliation">
                 <p>{{ $card->affiliation; }}</p>
             </div>
             <div class="power">

@@ -9,8 +9,10 @@ class CardController extends Controller
 {
     public function index()
     {
-        $card = Card::where('title', 'spider-man')->first();
-        $card->affiliation = str_replace('/', ' ● ', $card->affiliation);
+        $card = Card::where('title', 'batman')->first();
+
+        $card->format($card);
+
         $flight = 0;
         $range = 0;
         if ($card->flight == 0) {
@@ -20,14 +22,32 @@ class CardController extends Controller
             $range = 'visibility: hidden;';
         }
 
-        if ($card->affiliation == "") {
-            $affiliation = "margin-top: 370px";
-        } else {
-            $affiliation = '';
+        $card_image = $card->cardImage($card);
+
+        return view('new', compact('card', 'flight', 'range', 'card_image'));
+    }
+
+    public function search(Request $request)
+    {
+        $card = Card::where('title', 'like', $request->title)->where('version', 'like', $request->version ?? '')->first();
+        
+        if (!$card) {
+            $card = Card::where('title', 'like', $request->title)->first();
         }
 
+        $card->format($card);
 
-        // return view('home', compact('card'));
-        return view('new', compact('card', 'flight', 'range', 'affiliation'));
+        $flight = 0;
+        $range = 0;
+        if ($card->flight == 0) {
+            $flight = 'visibility: hidden;';
+        }
+        if ($card->range == 0) {
+            $range = 'visibility: hidden;';
+        }
+
+        $card_image = $card->cardImage($card);
+
+        return view('new', compact('card', 'flight', 'range', 'card_image'));
     }
 }
