@@ -5,8 +5,9 @@
         <div class="search">
             <form action="/search" method="post" autocomplete="off">
                 @csrf
-                <input type="text" name="title" class="search-box">
-                <input type="text" name="version" class="search-box">
+                <input type="text" name="title" class="search-box" placeholder="title">
+                <input type="text" name="version" class="search-box" placeholder="version">
+                {{-- <input type="text" name="affiliation" class="search-box" placeholder="affiliation"> --}}
                 <input type="submit" hidden='true'>
             </form>
         </div>

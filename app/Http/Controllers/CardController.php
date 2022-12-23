@@ -9,7 +9,7 @@ class CardController extends Controller
 {
     public function index()
     {
-        $card = Card::where('title', 'batman')->first();
+        $card = Card::where('title', 'Batman')->first();
 
         $card->format($card);
 
