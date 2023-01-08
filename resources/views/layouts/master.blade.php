@@ -1,6 +1,6 @@
 <!DOCTYPE html>
     <head>
-        <title>KDB</title>
+        <title>Vs Database</title>
         <!-- Google fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 

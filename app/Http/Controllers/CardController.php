@@ -15,10 +15,10 @@ class CardController extends Controller
 
         $flight = 0;
         $range = 0;
-        if ($card->flight == 0) {
+        if ($card->flight != 1) {
             $flight = 'visibility: hidden;';
         }
-        if ($card->range == 0) {
+        if ($card->range != 1) {
             $range = 'visibility: hidden;';
         }
 
@@ -39,10 +39,10 @@ class CardController extends Controller
 
         $flight = 0;
         $range = 0;
-        if ($card->flight == 0) {
+        if ($card->flight != 1) {
             $flight = 'visibility: hidden;';
         }
-        if ($card->range == 0) {
+        if ($card->range != 1) {
             $range = 'visibility: hidden;';
         }
 
